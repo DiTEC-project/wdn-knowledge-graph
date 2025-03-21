@@ -1,0 +1,180 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+@prefix wdn:  <https://raw.githubusercontent.com/DiTEC-project/wdn-knowledge-graph/refs/heads/main/wdn_ontology.ttl> .
+
+# Classes
+wdn:Node
+    rdf:type     rdfs:Class ;
+    rdfs:label   "Node" ;
+    rdfs:comment "A point in the network where links join together." .
+
+wdn:Junction
+    rdf:type        rdfs:Class ;
+    rdfs:subClassOf wdn:Node ;
+    rdfs:label      "Junction" ;
+    rdfs:comment    "A point where links join and water enters or leaves the network." .
+
+wdn:Reservoir
+    rdf:type        rdfs:Class ;
+    rdfs:subClassOf wdn:Node ;
+    rdfs:label      "Reservoir" ;
+    rdfs:comment    "An infinite external source or sink of water to the network." .
+
+wdn:Tank
+    rdf:type        rdfs:Class ;
+    rdfs:subClassOf wdn:Node ;
+    rdfs:label      "Tank" ;
+    rdfs:comment    "A storage node where the volume of stored water can vary over time." .
+
+wdn:Link
+    rdf:type     rdfs:Class ;
+    rdfs:label   "Link" ;
+    rdfs:comment "A connection between nodes in the network." .
+
+wdn:Pipe
+    rdf:type        rdfs:Class ;
+    rdfs:subClassOf wdn:Link ;
+    rdfs:label      "Pipe" ;
+    rdfs:comment    "A conduit used to transport water between nodes." .
+
+wdn:Pump
+    rdf:type        rdfs:Class ;
+    rdfs:subClassOf wdn:Link ;
+    rdfs:label      "Pump" ;
+    rdfs:comment    "A device used to add energy to the water to move it through the network." .
+
+wdn:Valve
+    rdf:type        rdfs:Class ;
+    rdfs:subClassOf wdn:Link ;
+    rdfs:label      "Valve" ;
+    rdfs:comment    "A device used to control the flow and pressure within the network." .
+
+# Object Properties
+wdn:hasStartNode
+    rdf:type     owl:ObjectProperty ;
+    rdfs:domain  wdn:Link ;
+    rdfs:range   wdn:Node ;
+    rdfs:label   "has start node" ;
+    rdfs:comment "Specifies the starting node of a link." .
+
+wdn:hasEndNode
+    rdf:type     owl:ObjectProperty ;
+    rdfs:domain  wdn:Link ;
+    rdfs:range   wdn:Node ;
+    rdfs:label   "has end node" ;
+    rdfs:comment "Specifies the ending node of a link." .
+
+wdn:pumpsReceivesWaterFrom
+    rdf:type     owl:ObjectProperty ;
+    rdfs:domain  wdn:Pump ;
+    rdfs:range   wdn:Junction ;
+    rdfs:label   "pump receives water from" ;
+    rdfs:comment "A pump receiving water from a junction" .
+
+wdn:pumpsWaterTo
+    rdf:type     owl:ObjectProperty ;
+    rdfs:domain  wdn:Pump ;
+    rdfs:range   wdn:Tank ;
+    rdfs:label   "pumps water to" ;
+    rdfs:comment "A pump can pump water to a tank for storage." .
+
+# Data Properties
+wdn:elevation
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Junction ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "elevation" ;
+    rdfs:comment "Elevation above a reference point (usually mean sea level)." .
+
+wdn:baseDemand
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Junction ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "base demand" ;
+    rdfs:comment "Rate of water withdrawal from the network." .
+
+wdn:initialQuality
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Node ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "initial quality" ;
+    rdfs:comment "Initial water quality at the node." .
+
+wdn:head
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Reservoir ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "head" ;
+    rdfs:comment "Hydraulic head or water surface elevation." .
+
+wdn:bottomElevation
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Tank ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "bottom elevation" ;
+    rdfs:comment "Elevation at the bottom of the tank." .
+
+wdn:diameter
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Tank, wdn:Pipe ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "diameter" ;
+    rdfs:comment "Diameter of the tank or pipe." .
+
+wdn:initialLevel
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Tank ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "initial level" ;
+    rdfs:comment "Initial water level in the tank." .
+
+wdn:minLevel
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Tank ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "minimum level" ;
+    rdfs:comment "Minimum allowable water level in the tank." .
+
+wdn:maxLevel
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Tank ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "maximum level" ;
+    rdfs:comment "Maximum allowable water level in the tank." .
+
+wdn:length
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Pipe ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "length" ;
+    rdfs:comment "Length of the pipe." .
+
+wdn:roughness
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Pipe ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "roughness" ;
+    rdfs:comment "Roughness coefficient of the pipe's interior surface." .
+
+wdn:power
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Pump ;
+    rdfs:range   xsd:double ;
+    rdfs:label   "power" ;
+    rdfs:comment "Power rating of the pump." .
+
+wdn:setting
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Valve ;
+    rdfs:range   xsd:string ;
+    rdfs:label   "setting" ;
+    rdfs:comment "Operational setting of the valve." .
+
+wdn:status
+    rdf:type     owl:DatatypeProperty ;
+    rdfs:domain  wdn:Link ;
+    rdfs:range   xsd:string ;
+    rdfs:label   "status" ;
+    rdfs:comment "Operational status of the link (e.g., open, closed)." .

@@ -2,9 +2,9 @@
 
 `wdn-knowledge-graph` is a Python package designed to convert water distribution network (WDN) data from `.inp` files (
 the standard format for the [EPANET](https://epanet22.readthedocs.io/en/latest/3_network_model.html) tool) into **RDF
-knowledge graphs** in the `.ttl` format using a given ontology.
+knowledge graphs** in the `.ttl` format using a WDN ontology we created.
 
-The package provides a **WDN ontology** in [`wdn_ontology.ttl`](wdn_ontology.ttl) that captures the physical components
+The **WDN ontology** in [`wdn_ontology.ttl`](wdn_ontology.ttl) captures the physical components
 of a WDN, inspired from the EPANET tool.
 
 This package also provides the possibility of converting the final knowledge graph to the popular NetworkX format for
@@ -66,17 +66,15 @@ pip install wdn-knowledge-graph
 
 ### Command-Line Interface (CLI)
 
-Once the package is installed, you can use it directly from the command line to generate a knowledge graph from a water
-distribution network .inp file and an ontology .ttl file.
-Command-Line Interface (CLI)
+Once the package is installed, you can use it directly from the command line to construct a knowledge graph from a water
+distribution network .inp file. The construction of the knowledge graph uses our Water Distribution Network
+ontology ([wdn_ontology.ttl](wdn_ontology.ttl)).
 
 ```bash
-create-knowledge-graph -i path_to_input_file.inp -o path_to_ontology_file.ttl -d output_file.ttl
+create-knowledge-graph -i path_to_input_file.inp -d output_file.ttl
 ```
 
 -i : Path to the .inp file containing water network data.
-
--o : Path to the ontology .ttl file (default is [wdn_ontology.ttl](wdn_ontology.ttl)).
 
 -d : Path to the output .ttl file to save the generated knowledge graph.
 
@@ -147,6 +145,13 @@ This package makes use of several popular Python libraries for ease of use and p
   serializing RDF files, and querying them using SPARQL.
 - [NetworkX](https://networkx.org/): A Python package for the creation, manipulation, and study of the structure,
   dynamics, and functions of complex networks.
+
+### Sample Data
+
+The sample data folder includes knowledge graphs created for the [L-Town](https://zenodo.org/records/4017659)
+and [LeakDB](https://github.com/KIOS-Research/LeakDB) (Scenario 1) datasets.
+
+-
 
 ## Functions
 
