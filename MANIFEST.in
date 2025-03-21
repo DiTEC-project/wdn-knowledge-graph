@@ -1,5 +1,5 @@
 include README.md
 include LICENSE
-include my_python_package/knowledge_graph.py
+recursive-include wdn_knowledge_graph *
 include wdn_ontology.ttl
-include sample_data/
+recursive-include sample_data
