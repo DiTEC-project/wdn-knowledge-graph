@@ -1,7 +1,11 @@
 # wdn-knowledge-graph
 
 `wdn-knowledge-graph` is a Python package designed to convert water distribution network (WDN) data from `.inp` files (
-the standard format for the EPANET tool) into RDF knowledge graphs in the `.ttl` format using a given ontology.
+the standard format for the [EPANET](https://epanet22.readthedocs.io/en/latest/3_network_model.html) tool) into **RDF
+knowledge graphs** in the `.ttl` format using a given ontology.
+
+The package provides a **WDN ontology** in [`wdn_ontology.ttl`](wdn_ontology.ttl) that captures the physical components
+of a WDN, inspired from the EPANET tool.
 
 This package also provides the possibility of converting the final knowledge graph to the popular NetworkX format for
 further processing, making it easier to analyze and manipulate the water distribution network data.
@@ -13,17 +17,17 @@ further processing, making it easier to analyze and manipulate the water distrib
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Usage](#usage)
-  - [Command-Line Interface (CLI)](#command-line-interface-cli)
-  - [Using in a Python Program](#using-in-a-python-program)
+    - [Command-Line Interface (CLI)](#command-line-interface-cli)
+    - [Using in a Python Program](#using-in-a-python-program)
 - [About](#about)
-  - [EPANET](#epanet)
-  - [TTL Files](#ttl-files)
-  - [INP Files](#inp-files)
-  - [Ontology and Knowledge Graph](#ontology-and-knowledge-graph)
+    - [EPANET](#epanet)
+    - [TTL Files](#ttl-files)
+    - [INP Files](#inp-files)
+    - [Ontology and Knowledge Graph](#ontology-and-knowledge-graph)
 - [Functions](#functions)
-  - [extract_namespace_from_ontology](#extract_namespace_from_ontology)
-  - [create_knowledge_graph_from_inp](#create_knowledge_graph_from_inp)
-  - [networkx](#networkx)
+    - [extract_namespace_from_ontology](#extract_namespace_from_ontology)
+    - [create_knowledge_graph_from_inp](#create_knowledge_graph_from_inp)
+    - [networkx](#networkx)
 - [Citation](#citation)
 - [Contact](#contact)
 - [Contributing](#contributing)
@@ -67,7 +71,7 @@ distribution network .inp file and an ontology .ttl file.
 Command-Line Interface (CLI)
 
 ```bash
-python -m wdn_knowledge_graph.create_knowledge_graph -i path_to_input_file.inp -o path_to_ontology_file.ttl -d output_file.ttl
+create-knowledge-graph -i path_to_input_file.inp -o path_to_ontology_file.ttl -d output_file.ttl
 ```
 
 -i : Path to the .inp file containing water network data.
@@ -76,10 +80,10 @@ python -m wdn_knowledge_graph.create_knowledge_graph -i path_to_input_file.inp -
 
 -d : Path to the output .ttl file to save the generated knowledge graph.
 
-
 ### Using in a Python Program
 
-Alternatively, you can use the package directly within a Python program by importing its functions. This allows for more flexibility in how you integrate it into your project.
+Alternatively, you can use the package directly within a Python program by importing its functions. This allows for more
+flexibility in how you integrate it into your project.
 
 **Example**:
 
@@ -102,7 +106,8 @@ networkx_graph = networkx(knowledge_graph, ontology)
 In this example:
 
 - `create_knowledge_graph_from_inp()` is used to generate the RDF knowledge graph from the .inp file and ontology.
-- `networkx()` is then used to convert the RDF graph into a NetworkX graph, which can be analyzed or manipulated further.
+- `networkx()` is then used to convert the RDF graph into a NetworkX graph, which can be analyzed or manipulated
+  further.
 
 ## About
 
@@ -197,6 +202,6 @@ If you have any questions or improvement ideas, feel free to contact Erkan Karab
 You can contribute to the project in any way you see fit! Whether it’s updating our WDN ontology, reporting bugs,
 suggesting new features, or submitting code, your input is welcome.
 
-To contribute, please visit the project’s GitLab repository and start a discussion: 
+To contribute, please visit the project’s GitLab repository and start a discussion:
 
 **GitLab**: [wdn-knowledge-graph](https://github.com/DiTEC-project/wdn-knowledge-graph)

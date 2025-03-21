@@ -173,7 +173,7 @@ def networkx(rdf_graph: Graph, ontology: Graph):
     return nx_graph
 
 
-if __name__ == "__main__":
+def main():
     parser = argparse.ArgumentParser(description="Convert .inp water network files into RDF knowledge graphs.")
     parser.add_argument("-i", "--inp-file", help="Path to the .inp file")
     parser.add_argument("-o", "--ontology-file", nargs="?", default="wdn_ontology.ttl",
@@ -188,3 +188,7 @@ if __name__ == "__main__":
 
     ontology = Graph().parse(args.ontology_file, format="ttl")
     networkx_format = networkx(knowledge_graph, ontology)
+
+
+if __name__ == "__main__":
+    main()
