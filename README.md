@@ -86,19 +86,23 @@ flexibility in how you integrate it into your project.
 **Example**:
 
 ```
-from wdn_knowledge_graph.create_knowledge_graph import create_knowledge_graph_from_inp, networkx
+from rdflib import Graph
+from wdn_knowledge_graph.knowledge_graph import create_knowledge_graph_from_inp, networkx
 
 # Define file paths
-inp_file = 'path_to_input_file.inp'
-ontology_file = 'path_to_ontology_file.ttl'
-output_file = 'output_file.ttl'
+inp_file = 'EPANET input file.inp'
+output_file = 'knowledge_graph.ttl'
+ontology_file = 'wdn_ontology.ttl'
 
 # Create the knowledge graph
-knowledge_graph = create_knowledge_graph_from_inp(inp_file, ontology_file, destination=output_file)
+knowledge_graph = create_knowledge_graph_from_inp(inp_file, destination=output_file)
 
 # Convert the RDF knowledge graph to a NetworkX graph for further processing
 ontology = Graph().parse(ontology_file, format='ttl')
 networkx_graph = networkx(knowledge_graph, ontology)
+
+print(networkx_graph)
+
 ```
 
 In this example:

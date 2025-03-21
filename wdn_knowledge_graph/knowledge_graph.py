@@ -8,7 +8,7 @@ from rdflib.namespace import RDF, RDFS, XSD
 import sys
 
 
-def create_knowledge_graph_from_inp(inp_file, ontology_file, destination="knowledge_graph.ttl"):
+def create_knowledge_graph_from_inp(inp_file, destination="knowledge_graph.ttl"):
     # Extract namespace from the ontology TTL file
     wdn_namespace = Namespace(
         'https://raw.githubusercontent.com/DiTEC-project/wdn-knowledge-graph/refs/heads/main/wdn_ontology.ttl')
@@ -179,9 +179,9 @@ def main():
                         default="knowledge_graph.ttl")
 
     args = parser.parse_args()
-
-    print(f"Using the ontology file {args.ontology_file} for populating the knowledge graph.")
-    knowledge_graph = create_knowledge_graph_from_inp(args.inp_file, args.ontology_file, args.destination)
+    ontology_file = get_default_ontology_file()
+    print(f"Using the ontology file {ontology_file} for populating the knowledge graph.")
+    create_knowledge_graph_from_inp(args.inp_file, args.destination)
 
     # ontology = Graph().parse(args.ontology_file, format="ttl")
     # networkx_format = networkx(knowledge_graph, ontology)
