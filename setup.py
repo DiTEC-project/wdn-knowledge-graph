@@ -2,13 +2,16 @@ from setuptools import setup, find_packages
 
 setup(
     name="wdn-knowledge-graph",
-    version="0.1.0",
+    version="1.0.3",
     packages=find_packages(),
     install_requires=[
         'networkx',
         'wntr',
         'rdflib',
     ],
+    package_data={
+        'wdn_knowledge_graph': ['wdn_ontology.ttl'],  # Specify your non-Python files here
+    },
     entry_points={
         'console_scripts': [
             'create-knowledge-graph=wdn_knowledge_graph.knowledge_graph:main',

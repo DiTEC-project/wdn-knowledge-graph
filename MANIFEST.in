@@ -1,3 +1,5 @@
 include README.md
 include LICENSE
 include my_python_package/knowledge_graph.py
+include wdn_ontology.ttl
+include sample_data/

@@ -2,6 +2,7 @@ import argparse
 
 import networkx as nx
 import wntr
+import pkg_resources
 from rdflib import Graph, URIRef, Literal, Namespace, OWL
 from rdflib.namespace import RDF, RDFS, XSD
 import sys
@@ -19,7 +20,7 @@ def extract_namespace_from_ontology(ontology_file):
     return None  # Return None if 'wdn' prefix is not found
 
 
-def create_knowledge_graph_from_inp(inp_file, ontology_file, destination="LeakDB Scenario 1 - Knowledge Graph.ttl"):
+def create_knowledge_graph_from_inp(inp_file, ontology_file, destination="knowledge_graph.ttl"):
     # Extract namespace from the ontology TTL file
     wdn_namespace = extract_namespace_from_ontology(ontology_file)
     if not wdn_namespace:
@@ -172,16 +173,29 @@ def networkx(rdf_graph: Graph, ontology: Graph):
 
     return nx_graph
 
+def get_default_ontology_file():
+    # Use pkg_resources to access the ontology file packaged within the distribution
+    ontology_file = pkg_resources.resource_filename(
+        'wdn_knowledge_graph',  # Name of the package (should match the directory name)
+        'wdn_ontology.ttl'  # The file path relative to the package
+    )
+    return ontology_file
+
 
 def main():
     parser = argparse.ArgumentParser(description="Convert .inp water network files into RDF knowledge graphs.")
     parser.add_argument("-i", "--inp-file", help="Path to the .inp file")
-    parser.add_argument("-o", "--ontology-file", nargs="?", default="wdn_ontology.ttl",
-                        help="Path to the ontology file (default: wdn_ontology.ttl)")
+    parser.add_argument("-o", "--ontology-file", nargs="?", default=None,
+                        help="Path to the ontology file (default: use the built-in wdn_ontology.ttl)")
     parser.add_argument("-d", "--destination", help="Path to the file to save the knowledge graph into.",
                         default="knowledge_graph.ttl")
 
     args = parser.parse_args()
+
+    # Use the default ontology file if no ontology file is provided
+    if args.ontology_file is None:
+        print("No ontology file provided, using the default ontology file.")
+        args.ontology_file = get_default_ontology_file()
 
     print(f"Using the ontology file {args.ontology_file} for populating the knowledge graph.")
     knowledge_graph = create_knowledge_graph_from_inp(args.inp_file, args.ontology_file, args.destination)
