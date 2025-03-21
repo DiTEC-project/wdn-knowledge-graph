@@ -1,0 +1,4 @@
+networkx==3.4.2
+rdflib==7.1.3
+setuptools==75.8.2
+wntr==1.3.2

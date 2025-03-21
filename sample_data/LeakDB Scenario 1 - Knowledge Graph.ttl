@@ -1,0 +1,469 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix wdn: <http://example.org/water-distribution#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+wdn:Pipe_1 a wdn:Pipe ;
+    rdfs:label "Pipe 1" ;
+    wdn:diameter 1.060916e+00 ;
+    wdn:hasEndNode wdn:Reservoir_2 ;
+    wdn:hasStartNode wdn:Reservoir_1 ;
+    wdn:length 1.142298e+02 ;
+    wdn:roughness 1.194946e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_10 a wdn:Pipe ;
+    rdfs:label "Pipe 10" ;
+    wdn:diameter 8.293469e-01 ;
+    wdn:hasEndNode wdn:Junction_11 ;
+    wdn:hasStartNode wdn:Junction_10 ;
+    wdn:length 8.889726e+02 ;
+    wdn:roughness 1.393361e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_11 a wdn:Pipe ;
+    rdfs:label "Pipe 11" ;
+    wdn:diameter 7.761128e-01 ;
+    wdn:hasEndNode wdn:Junction_12 ;
+    wdn:hasStartNode wdn:Junction_11 ;
+    wdn:length 1.128793e+03 ;
+    wdn:roughness 1.342898e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_12 a wdn:Pipe ;
+    rdfs:label "Pipe 12" ;
+    wdn:diameter 6.232201e-01 ;
+    wdn:hasEndNode wdn:Junction_13 ;
+    wdn:hasStartNode wdn:Junction_12 ;
+    wdn:length 3.405217e+03 ;
+    wdn:roughness 1.241183e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_13 a wdn:Pipe ;
+    rdfs:label "Pipe 13" ;
+    wdn:diameter 4.246387e-01 ;
+    wdn:hasEndNode wdn:Junction_14 ;
+    wdn:hasStartNode wdn:Junction_10 ;
+    wdn:length 7.248602e+02 ;
+    wdn:roughness 1.206426e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_14 a wdn:Pipe ;
+    rdfs:label "Pipe 14" ;
+    wdn:diameter 3.916065e-01 ;
+    wdn:hasEndNode wdn:Junction_15 ;
+    wdn:hasStartNode wdn:Junction_14 ;
+    wdn:length 5.603862e+02 ;
+    wdn:roughness 1.375921e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_15 a wdn:Pipe ;
+    rdfs:label "Pipe 15" ;
+    wdn:diameter 3.217454e-01 ;
+    wdn:hasEndNode wdn:Junction_16 ;
+    wdn:hasStartNode wdn:Junction_15 ;
+    wdn:length 5.567105e+02 ;
+    wdn:roughness 1.383636e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_16 a wdn:Pipe ;
+    rdfs:label "Pipe 16" ;
+    wdn:diameter 4.334288e-01 ;
+    wdn:hasEndNode wdn:Junction_16 ;
+    wdn:hasStartNode wdn:Junction_17 ;
+    wdn:length 2.779985e+03 ;
+    wdn:roughness 1.241286e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_17 a wdn:Pipe ;
+    rdfs:label "Pipe 17" ;
+    wdn:diameter 4.649811e-01 ;
+    wdn:hasEndNode wdn:Junction_18 ;
+    wdn:hasStartNode wdn:Junction_17 ;
+    wdn:length 1.984061e+03 ;
+    wdn:roughness 1.239084e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_18 a wdn:Pipe ;
+    rdfs:label "Pipe 18" ;
+    wdn:diameter 5.701655e-01 ;
+    wdn:hasEndNode wdn:Junction_19 ;
+    wdn:hasStartNode wdn:Junction_18 ;
+    wdn:length 8.31656e+02 ;
+    wdn:roughness 1.383354e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_19 a wdn:Pipe ;
+    rdfs:label "Pipe 19" ;
+    wdn:diameter 6.350885e-01 ;
+    wdn:hasEndNode wdn:Junction_3 ;
+    wdn:hasStartNode wdn:Junction_19 ;
+    wdn:length 3.933854e+02 ;
+    wdn:roughness 1.277898e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_2 a wdn:Pipe ;
+    rdfs:label "Pipe 2" ;
+    wdn:diameter 8.430822e-01 ;
+    wdn:hasEndNode wdn:Junction_3 ;
+    wdn:hasStartNode wdn:Junction_2 ;
+    wdn:length 1.391157e+03 ;
+    wdn:roughness 1.244166e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_20 a wdn:Pipe ;
+    rdfs:label "Pipe 20" ;
+    wdn:diameter 8.712443e-01 ;
+    wdn:hasEndNode wdn:Junction_20 ;
+    wdn:hasStartNode wdn:Junction_3 ;
+    wdn:length 1.949039e+03 ;
+    wdn:roughness 1.344367e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_21 a wdn:Pipe ;
+    rdfs:label "Pipe 21" ;
+    wdn:diameter 5.397627e-01 ;
+    wdn:hasEndNode wdn:Junction_21 ;
+    wdn:hasStartNode wdn:Junction_20 ;
+    wdn:length 1.300235e+03 ;
+    wdn:roughness 1.213276e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_22 a wdn:Pipe ;
+    rdfs:label "Pipe 22" ;
+    wdn:diameter 2.452622e-01 ;
+    wdn:hasEndNode wdn:Junction_22 ;
+    wdn:hasStartNode wdn:Junction_21 ;
+    wdn:length 4.9544e+02 ;
+    wdn:roughness 1.246672e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_23 a wdn:Pipe ;
+    rdfs:label "Pipe 23" ;
+    wdn:diameter 9.225642e-01 ;
+    wdn:hasEndNode wdn:Junction_23 ;
+    wdn:hasStartNode wdn:Junction_20 ;
+    wdn:length 3.045126e+03 ;
+    wdn:roughness 1.299695e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_24 a wdn:Pipe ;
+    rdfs:label "Pipe 24" ;
+    wdn:diameter 8.803999e-01 ;
+    wdn:hasEndNode wdn:Junction_24 ;
+    wdn:hasStartNode wdn:Junction_23 ;
+    wdn:length 1.137584e+03 ;
+    wdn:roughness 1.211205e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_25 a wdn:Pipe ;
+    rdfs:label "Pipe 25" ;
+    wdn:diameter 8.9693e-01 ;
+    wdn:hasEndNode wdn:Junction_25 ;
+    wdn:hasStartNode wdn:Junction_24 ;
+    wdn:length 1.113361e+03 ;
+    wdn:roughness 1.422486e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_26 a wdn:Pipe ;
+    rdfs:label "Pipe 26" ;
+    wdn:diameter 5.005573e-01 ;
+    wdn:hasEndNode wdn:Junction_25 ;
+    wdn:hasStartNode wdn:Junction_26 ;
+    wdn:length 7.390392e+02 ;
+    wdn:roughness 1.347332e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_27 a wdn:Pipe ;
+    rdfs:label "Pipe 27" ;
+    wdn:diameter 2.801801e-01 ;
+    wdn:hasEndNode wdn:Junction_26 ;
+    wdn:hasStartNode wdn:Junction_27 ;
+    wdn:length 2.702717e+02 ;
+    wdn:roughness 1.253036e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_28 a wdn:Pipe ;
+    rdfs:label "Pipe 28" ;
+    wdn:diameter 3.147783e-01 ;
+    wdn:hasEndNode wdn:Junction_27 ;
+    wdn:hasStartNode wdn:Junction_16 ;
+    wdn:length 8.477894e+02 ;
+    wdn:roughness 1.314332e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_29 a wdn:Pipe ;
+    rdfs:label "Pipe 29" ;
+    wdn:diameter 3.507335e-01 ;
+    wdn:hasEndNode wdn:Junction_28 ;
+    wdn:hasStartNode wdn:Junction_23 ;
+    wdn:length 1.539366e+03 ;
+    wdn:roughness 1.173901e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_3 a wdn:Pipe ;
+    rdfs:label "Pipe 3" ;
+    wdn:diameter 9.093954e-01 ;
+    wdn:hasEndNode wdn:Junction_4 ;
+    wdn:hasStartNode wdn:Junction_3 ;
+    wdn:length 8.365726e+02 ;
+    wdn:roughness 1.221604e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_30 a wdn:Pipe ;
+    rdfs:label "Pipe 30" ;
+    wdn:diameter 3.377215e-01 ;
+    wdn:hasEndNode wdn:Junction_29 ;
+    wdn:hasStartNode wdn:Junction_28 ;
+    wdn:length 1.840157e+03 ;
+    wdn:roughness 1.417887e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_31 a wdn:Pipe ;
+    rdfs:label "Pipe 31" ;
+    wdn:diameter 3.304621e-01 ;
+    wdn:hasEndNode wdn:Junction_30 ;
+    wdn:hasStartNode wdn:Junction_29 ;
+    wdn:length 1.632002e+03 ;
+    wdn:roughness 1.397183e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_32 a wdn:Pipe ;
+    rdfs:label "Pipe 32" ;
+    wdn:diameter 3.134411e-01 ;
+    wdn:hasEndNode wdn:Junction_31 ;
+    wdn:hasStartNode wdn:Junction_30 ;
+    wdn:length 1.522226e+02 ;
+    wdn:roughness 1.366096e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_33 a wdn:Pipe ;
+    rdfs:label "Pipe 33" ;
+    wdn:diameter 3.944404e-01 ;
+    wdn:hasEndNode wdn:Junction_31 ;
+    wdn:hasStartNode wdn:Junction_32 ;
+    wdn:length 7.598575e+02 ;
+    wdn:roughness 1.402324e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_34 a wdn:Pipe ;
+    rdfs:label "Pipe 34" ;
+    wdn:diameter 4.437948e-01 ;
+    wdn:hasEndNode wdn:Junction_32 ;
+    wdn:hasStartNode wdn:Junction_25 ;
+    wdn:length 8.682934e+02 ;
+    wdn:roughness 1.257094e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_4 a wdn:Pipe ;
+    rdfs:label "Pipe 4" ;
+    wdn:diameter 8.531894e-01 ;
+    wdn:hasEndNode wdn:Junction_5 ;
+    wdn:hasStartNode wdn:Junction_4 ;
+    wdn:length 1.055002e+03 ;
+    wdn:roughness 1.17703e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_5 a wdn:Pipe ;
+    rdfs:label "Pipe 5" ;
+    wdn:diameter 9.798444e-01 ;
+    wdn:hasEndNode wdn:Junction_6 ;
+    wdn:hasStartNode wdn:Junction_5 ;
+    wdn:length 1.66272e+03 ;
+    wdn:roughness 1.27417e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_6 a wdn:Pipe ;
+    rdfs:label "Pipe 6" ;
+    wdn:diameter 1.162117e+00 ;
+    wdn:hasEndNode wdn:Junction_7 ;
+    wdn:hasStartNode wdn:Junction_6 ;
+    wdn:length 4.555509e+02 ;
+    wdn:roughness 1.369883e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_7 a wdn:Pipe ;
+    rdfs:label "Pipe 7" ;
+    wdn:diameter 9.904679e-01 ;
+    wdn:hasEndNode wdn:Junction_8 ;
+    wdn:hasStartNode wdn:Junction_7 ;
+    wdn:length 9.758416e+02 ;
+    wdn:roughness 1.189298e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_8 a wdn:Pipe ;
+    rdfs:label "Pipe 8" ;
+    wdn:diameter 1.053508e+00 ;
+    wdn:hasEndNode wdn:Junction_9 ;
+    wdn:hasStartNode wdn:Junction_8 ;
+    wdn:length 7.518206e+02 ;
+    wdn:roughness 1.345464e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Pipe_9 a wdn:Pipe ;
+    rdfs:label "Pipe 9" ;
+    wdn:diameter 1.027506e+00 ;
+    wdn:hasEndNode wdn:Junction_10 ;
+    wdn:hasStartNode wdn:Junction_9 ;
+    wdn:length 8.95334e+02 ;
+    wdn:roughness 1.285737e+02 ;
+    wdn:status "Open"^^xsd:string .
+
+wdn:Junction_13 a wdn:Junction ;
+    rdfs:label "Junction 13" ;
+    wdn:baseDemand 7.119841e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_2 a wdn:Junction ;
+    rdfs:label "Junction 2" ;
+    wdn:baseDemand 7.099964e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_22 a wdn:Junction ;
+    rdfs:label "Junction 22" ;
+    wdn:baseDemand 3.738726e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Reservoir_1 a wdn:Reservoir ;
+    rdfs:label "Reservoir 1" ;
+    wdn:head 1e+02 .
+
+wdn:Junction_11 a wdn:Junction ;
+    rdfs:label "Junction 11" ;
+    wdn:baseDemand 3.771545e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_12 a wdn:Junction ;
+    rdfs:label "Junction 12" ;
+    wdn:baseDemand 4.341501e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_14 a wdn:Junction ;
+    rdfs:label "Junction 14" ;
+    wdn:baseDemand 4.807346e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_15 a wdn:Junction ;
+    rdfs:label "Junction 15" ;
+    wdn:baseDemand 2.125174e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_17 a wdn:Junction ;
+    rdfs:label "Junction 17" ;
+    wdn:baseDemand 6.520747e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_18 a wdn:Junction ;
+    rdfs:label "Junction 18" ;
+    wdn:baseDemand 1.073668e-01 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_19 a wdn:Junction ;
+    rdfs:label "Junction 19" ;
+    wdn:baseDemand 4.647416e-03 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_21 a wdn:Junction ;
+    rdfs:label "Junction 21" ;
+    wdn:baseDemand 6.999278e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_24 a wdn:Junction ;
+    rdfs:label "Junction 24" ;
+    wdn:baseDemand 6.186958e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_26 a wdn:Junction ;
+    rdfs:label "Junction 26" ;
+    wdn:baseDemand 6.815944e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_27 a wdn:Junction ;
+    rdfs:label "Junction 27" ;
+    wdn:baseDemand 2.735517e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_28 a wdn:Junction ;
+    rdfs:label "Junction 28" ;
+    wdn:baseDemand 2.282339e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_29 a wdn:Junction ;
+    rdfs:label "Junction 29" ;
+    wdn:baseDemand 2.861432e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_30 a wdn:Junction ;
+    rdfs:label "Junction 30" ;
+    wdn:baseDemand 2.90086e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_31 a wdn:Junction ;
+    rdfs:label "Junction 31" ;
+    wdn:baseDemand 8.499632e-03 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_32 a wdn:Junction ;
+    rdfs:label "Junction 32" ;
+    wdn:baseDemand 5.919888e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_4 a wdn:Junction ;
+    rdfs:label "Junction 4" ;
+    wdn:baseDemand 1.030932e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_5 a wdn:Junction ;
+    rdfs:label "Junction 5" ;
+    wdn:baseDemand 5.38454e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_6 a wdn:Junction ;
+    rdfs:label "Junction 6" ;
+    wdn:baseDemand 7.557289e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_7 a wdn:Junction ;
+    rdfs:label "Junction 7" ;
+    wdn:baseDemand 1.07321e-01 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_8 a wdn:Junction ;
+    rdfs:label "Junction 8" ;
+    wdn:baseDemand 4.083808e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_9 a wdn:Junction ;
+    rdfs:label "Junction 9" ;
+    wdn:baseDemand 3.944335e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_10 a wdn:Junction ;
+    rdfs:label "Junction 10" ;
+    wdn:baseDemand 4.069736e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_16 a wdn:Junction ;
+    rdfs:label "Junction 16" ;
+    wdn:baseDemand 2.353805e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_20 a wdn:Junction ;
+    rdfs:label "Junction 20" ;
+    wdn:baseDemand 9.597935e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_23 a wdn:Junction ;
+    rdfs:label "Junction 23" ;
+    wdn:baseDemand 8.027338e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_25 a wdn:Junction ;
+    rdfs:label "Junction 25" ;
+    wdn:baseDemand 1.32875e-02 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_3 a wdn:Junction ;
+    rdfs:label "Junction 3" ;
+    wdn:baseDemand 6.646744e-02 ;
+    wdn:elevation 3e+01 .
+
