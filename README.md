@@ -25,7 +25,6 @@ further processing, making it easier to analyze and manipulate the water distrib
     - [INP Files](#inp-files)
     - [Ontology and Knowledge Graph](#ontology-and-knowledge-graph)
 - [Functions](#functions)
-    - [extract_namespace_from_ontology](#extract_namespace_from_ontology)
     - [create_knowledge_graph_from_inp](#create_knowledge_graph_from_inp)
     - [networkx](#networkx)
 - [Citation](#citation)
@@ -43,16 +42,7 @@ graph for further analysis, leveraging the power of the NetworkX Python package.
 
 You can use this package to model and analyze water distribution networks with ease and flexibility.
 
-Please remember to cite our paper if you use this package in your work:
-
-```
-@article{karabulut2024learning,
-  title={Learning Semantic Association Rules from Internet of Things Data},
-  author={Karabulut, Erkan and Groth, Paul and Degeler, Victoria},
-  journal={arXiv preprint arXiv:2412.03417},
-  year={2024}
-}
-```
+Please remember to [**cite**](#citation) our paper if you use this package in your work:
 
 ## Installation
 
@@ -116,7 +106,7 @@ In this example:
 This section explains some of the fundamental concepts behind the .inp file, .ttl (Turtle) files, EPANET, ontologies,
 and knowledge graphs that are used in this package.
 
-- **EPANET** is a software application used to simulate water distribution systems. It models the hydraulic and water
+- **[EPANET](https://epanet22.readthedocs.io/en/latest/3_network_model.html)** is a software application used to simulate water distribution systems. It models the hydraulic and water
   quality behavior of water distribution networks. EPANET uses the .inp file format to store input data describing the
   network, including pipes, junctions, tanks, reservoirs, and pumps.
 
