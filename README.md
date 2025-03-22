@@ -4,7 +4,9 @@
 the standard format for the [EPANET](https://epanet22.readthedocs.io/en/latest/3_network_model.html) tool) into **RDF
 knowledge graphs** in the `.ttl` format using a WDN ontology we created.
 
-The **WDN ontology** in [`wdn_ontology.ttl`](wdn_ontology.ttl) captures the physical components
+The **WDN ontology**
+in [`wdn_ontology.ttl`](https://github.com/DiTEC-project/wdn-knowledge-graph/blob/main/wdn_ontology.ttl) captures the
+physical components
 of a WDN, inspired from the EPANET tool.
 
 This package also provides the possibility of converting the final knowledge graph to the popular NetworkX format for
@@ -58,10 +60,10 @@ pip install wdn-knowledge-graph
 
 Once the package is installed, you can use it directly from the command line to construct a knowledge graph from a water
 distribution network .inp file. The construction of the knowledge graph uses our Water Distribution Network
-ontology ([wdn_ontology.ttl](wdn_ontology.ttl)).
+ontology ([wdn_ontology.ttl](https://github.com/DiTEC-project/wdn-knowledge-graph/blob/main/wdn_ontology.ttl)).
 
 ```bash
-create-knowledge-graph -i path_to_input_file.inp -d output_file.ttl
+create-knowledge-graph -i path_to_input_file.inp -d knowledge_graph.ttl
 ```
 
 -i : Path to the .inp file containing water network data.
@@ -106,7 +108,8 @@ In this example:
 This section explains some of the fundamental concepts behind the .inp file, .ttl (Turtle) files, EPANET, ontologies,
 and knowledge graphs that are used in this package.
 
-- **[EPANET](https://epanet22.readthedocs.io/en/latest/3_network_model.html)** is a software application used to simulate water distribution systems. It models the hydraulic and water
+- **[EPANET](https://epanet22.readthedocs.io/en/latest/3_network_model.html)** is a software application used to
+  simulate water distribution systems. It models the hydraulic and water
   quality behavior of water distribution networks. EPANET uses the .inp file format to store input data describing the
   network, including pipes, junctions, tanks, reservoirs, and pumps.
 
@@ -145,7 +148,10 @@ This package makes use of several popular Python libraries for ease of use and p
 The sample data folder includes knowledge graphs created for the [L-Town](https://zenodo.org/records/4017659)
 and [LeakDB](https://github.com/KIOS-Research/LeakDB) (Scenario 1) datasets.
 
--
+- [Knowledge graph](https://github.com/DiTEC-project/wdn-knowledge-graph/blob/main/sample_data/L-TOWN%20-%20Knowledge%20Graph.ttl)
+  constructed from the L-Town dataset
+- [Knowledge graph](https://github.com/DiTEC-project/wdn-knowledge-graph/blob/main/sample_data/LeakDB%20Scenario%201%20-%20Knowledge%20Graph.ttl)
+  constructed from the LeakDB dataset
 
 ## Functions
 
@@ -201,6 +207,6 @@ If you have any questions or improvement ideas, feel free to contact Erkan Karab
 You can contribute to the project in any way you see fit! Whether it’s updating our WDN ontology, reporting bugs,
 suggesting new features, or submitting code, your input is welcome.
 
-To contribute, please visit the project’s GitLab repository and start a discussion:
+To contribute, please visit the project’s GitHub repository and start a discussion:
 
-**GitLab**: [wdn-knowledge-graph](https://github.com/DiTEC-project/wdn-knowledge-graph)
+**GitHub**: [wdn-knowledge-graph](https://github.com/DiTEC-project/wdn-knowledge-graph)
