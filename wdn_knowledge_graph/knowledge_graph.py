@@ -3,7 +3,7 @@ import argparse
 import networkx as nx
 import wntr
 import pkg_resources
-from rdflib import Graph, URIRef, Literal, Namespace, OWL
+from rdflib import Graph, URIRef, Literal, Namespace
 from rdflib.namespace import RDF, RDFS, XSD
 import sys
 
@@ -118,46 +118,46 @@ def create_knowledge_graph_from_inp(inp_file, destination="knowledge_graph.ttl")
     return g
 
 
-def networkx(rdf_graph: Graph, ontology: Graph):
+def networkx(rdf_graph):
     """
     Convert an RDFLib graph to a NetworkX graph.
-
     - Nodes: All individuals and ontology classes.
     - Edges: Object properties create directed edges between nodes.
     - Attributes: Data properties are stored as node attributes.
     """
+    if isinstance(rdf_graph, Graph) or isinstance(rdf_graph, str):
+        if isinstance(rdf_graph, Graph):
+            rdf_graph = rdf_graph
+        elif isinstance(rdf_graph, str):
+            if rdf_graph.endswith('.ttl'):
+                try:
+                    rdf_graph = Graph().parse(rdf_graph, format='turtle')
+                except Exception as e:
+                    print(f"Error parsing Turtle file: {e}")
+                    return None
+            else:
+                print("Unexpected input format. Provide a Turtle (.ttl) file path.")
+    else:
+        print("Unexpected input format. Provide an RDFLib Graph or a .ttl file path.")
+        return None
+
     # Initialize the directed graph
     nx_graph = nx.DiGraph()
 
-    # First, we collect all object properties and data properties from the ontology
-    object_properties = set()
-    datatype_properties = set()
-
-    # Iterate over the ontology graph to find object and datatype properties
-    for s, p, o in ontology:
-        # Check if the predicate (p) is rdf:type and the object (o) is OWL.ObjectProperty
-        if p == RDF.type and o == OWL.ObjectProperty:
-            object_properties.add(str(s))  # Add ObjectProperty to the set
-        # Check if the predicate (p) is rdf:type and the object (o) is OWL.DatatypeProperty
-        elif p == RDF.type and o == OWL.DatatypeProperty:
-            datatype_properties.add(str(s))  # Add DatatypeProperty to the set
-
-    # Now process the RDF graph
+    # Process the RDF graph
     for s, p, o in rdf_graph:
         s_str, p_str, o_str = str(s), str(p), str(o)
 
-        # Add nodes (subjects and objects) to the graph
-        if (s, RDF.type, None) in rdf_graph:  # If subject is a known entity
-            nx_graph.add_node(s_str)
-        if (o, RDF.type, None) in rdf_graph:  # If object is a known entity
-            nx_graph.add_node(o_str)
+        # Add subject as a node
+        nx_graph.add_node(s_str)
 
-        # Check if the predicate is a data property or object property using the ontology
-        if p_str in datatype_properties:
-            # Data property → add as node attribute
+        # Check if the object is a literal (indicating a data property) or another entity (object property)
+        if isinstance(o, Literal):
+            # Data property → store as node attribute
             nx_graph.nodes[s_str][p_str] = o_str
-        elif p_str in object_properties:
-            # Object property → add as an edge
+        else:
+            # Object property → ensure object is also a node and create an edge
+            nx_graph.add_node(o_str)
             nx_graph.add_edge(s_str, o_str, predicate=p_str)
 
     return nx_graph
@@ -183,8 +183,8 @@ def main():
     print(f"Using the ontology file {ontology_file} for populating the knowledge graph.")
     create_knowledge_graph_from_inp(args.inp_file, args.destination)
 
-    # ontology = Graph().parse(args.ontology_file, format="ttl")
-    # networkx_format = networkx(knowledge_graph, ontology)
+    # ontology = Graph().parse(ontology_file, format="ttl")
+    # networkx_format = networkx(knowledge_graph)
 
 
 if __name__ == "__main__":
