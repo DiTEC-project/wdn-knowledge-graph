@@ -1,8 +1,24 @@
-@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix owl:  <http://www.w3.org/2002/07/owl#> .
-@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
-@prefix wdn:  <http://example.org/water-distribution#> .
+# Copyright (c) [2025] [Erkan Karabulut - DiTEC Project]
+#
+# This is a Water Distribution Network (WDN) ontology that captures the basic semantic concepts and properties
+# for physical components of a WDN, and it is inspired by the EPANET network model (https://epanet22.readthedocs.io/en/latest/3_network_model.html)
+#
+# This ontology is licensed under the MIT License.
+# See the LICENSE file in the root of this repository for details.
+
+@prefix rdf:     <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:    <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:     <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix spdx:    <http://spdx.org/rdf/terms#> .
+@prefix wdn:     <https://raw.githubusercontent.com/DiTEC-project/wdn-knowledge-graph/refs/heads/main/wdn_ontology.ttl> .
+
+wdn:OntologyName
+    a               owl:Ontology ;
+    dcterms:title   "Water Distribution Network Ontology" ;
+    dcterms:creator "Erkan Karabulut - DiTEC Project" ;
+    dcterms:license spdx:MIT .
 
 # Classes
 wdn:Node
