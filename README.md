@@ -171,15 +171,15 @@ pipes, tanks, etc.).
 
 - An RDF Graph object representing the knowledge graph.
 
-### networkx(rdf_graph, ontology)
+### networkx(rdf_graph)
 
-This function converts the RDF graph to a NetworkX graph for easier analysis and manipulation. It processes both object
+This function converts a Turtle file (knowledge graph) to a NetworkX graph for easier analysis and manipulation.
+It accepts either in RDFlib graph format or a string path to where the .ttl file is located. It processes both object
 properties and data properties from the ontology to create the appropriate nodes and edges in the NetworkX graph.
 
 **Parameters**:
 
-- rdf_graph: The RDF Graph object to be converted.
-- ontology: The ontology Graph object used to extract properties.
+- rdf_graph: An RDFlib Graph object or a .ttl file with the knowledge graph to be converted.
 
 **Returns**:
 
