@@ -79,7 +79,7 @@ def create_knowledge_graph_from_inp(inp_file, destination="knowledge_graph.ttl")
 
         # Object Properties: hasStartNode and hasEndNode
         start_node_uri = URIRef(wdn_namespace[f"{pipe_obj.start_node.node_type}_{pipe_obj.start_node_name}"])
-        end_node_uri = URIRef(wdn_namespace[f"{pipe_obj.start_node.node_type}_{pipe_obj.end_node_name}"])
+        end_node_uri = URIRef(wdn_namespace[f"{pipe_obj.end_node.node_type}_{pipe_obj.end_node_name}"])
 
         g.add((pipe_uri, wdn_namespace.hasStartNode, start_node_uri))
         g.add((pipe_uri, wdn_namespace.hasEndNode, end_node_uri))

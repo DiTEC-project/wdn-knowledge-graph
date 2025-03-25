@@ -1,16 +1,6 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix wdn: <http://example.org/water-distribution#> .
+@prefix wdn: <https://raw.githubusercontent.com/DiTEC-project/wdn-knowledge-graph/refs/heads/main/wdn_ontology.ttl> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-
-wdn:Junction_n303 a wdn:Junction ;
-    rdfs:label "Junction n303" ;
-    wdn:baseDemand 0e+00 ;
-    wdn:elevation 3.44994e+01 .
-
-wdn:Junction_n336 a wdn:Junction ;
-    rdfs:label "Junction n336" ;
-    wdn:baseDemand 9.168389e-05 ;
-    wdn:elevation 2.6e+01 .
 
 wdn:Pipe_p1 a wdn:Pipe ;
     rdfs:label "Pipe p1" ;
@@ -1293,7 +1283,7 @@ wdn:Pipe_p226 a wdn:Pipe ;
 wdn:Pipe_p227 a wdn:Pipe ;
     rdfs:label "Pipe p227" ;
     wdn:diameter 1.991467e-01 ;
-    wdn:hasEndNode wdn:Reservoir_n303 ;
+    wdn:hasEndNode wdn:Junction_n303 ;
     wdn:hasStartNode wdn:Reservoir_R1 ;
     wdn:length 2.77127e+01 ;
     wdn:roughness 1.316955e+02 ;
@@ -1374,7 +1364,7 @@ wdn:Pipe_p234 a wdn:Pipe ;
 wdn:Pipe_p235 a wdn:Pipe ;
     rdfs:label "Pipe p235" ;
     wdn:diameter 1.956035e-01 ;
-    wdn:hasEndNode wdn:Reservoir_n336 ;
+    wdn:hasEndNode wdn:Junction_n336 ;
     wdn:hasStartNode wdn:Reservoir_R2 ;
     wdn:length 3.65881e+01 ;
     wdn:roughness 1.335204e+02 ;
@@ -1410,7 +1400,7 @@ wdn:Pipe_p238 a wdn:Pipe ;
 wdn:Pipe_p239 a wdn:Pipe ;
     rdfs:label "Pipe p239" ;
     wdn:diameter 1.998262e-01 ;
-    wdn:hasEndNode wdn:Tank_n343 ;
+    wdn:hasEndNode wdn:Junction_n343 ;
     wdn:hasStartNode wdn:Tank_T1 ;
     wdn:length 2.80801e+01 ;
     wdn:roughness 1.426946e+02 ;
@@ -8310,6 +8300,16 @@ wdn:Junction_n297 a wdn:Junction ;
     wdn:baseDemand 5.576e-05 ;
     wdn:elevation 2.33934e+01 .
 
+wdn:Junction_n303 a wdn:Junction ;
+    rdfs:label "Junction n303" ;
+    wdn:baseDemand 0e+00 ;
+    wdn:elevation 3.44994e+01 .
+
+wdn:Junction_n336 a wdn:Junction ;
+    rdfs:label "Junction n336" ;
+    wdn:baseDemand 9.168389e-05 ;
+    wdn:elevation 2.6e+01 .
+
 wdn:Junction_n337 a wdn:Junction ;
     rdfs:label "Junction n337" ;
     wdn:baseDemand 0e+00 ;
@@ -8319,11 +8319,6 @@ wdn:Junction_n339 a wdn:Junction ;
     rdfs:label "Junction n339" ;
     wdn:baseDemand 5.985972e-05 ;
     wdn:elevation 2.28e+01 .
-
-wdn:Junction_n343 a wdn:Junction ;
-    rdfs:label "Junction n343" ;
-    wdn:baseDemand 3.809139e-05 ;
-    wdn:elevation 6.612e+01 .
 
 wdn:Junction_n39 a wdn:Junction ;
     rdfs:label "Junction n39" ;
@@ -8580,6 +8575,11 @@ wdn:Junction_n340 a wdn:Junction ;
     rdfs:label "Junction n340" ;
     wdn:baseDemand 1.330892e-04 ;
     wdn:elevation 3.01e+01 .
+
+wdn:Junction_n343 a wdn:Junction ;
+    rdfs:label "Junction n343" ;
+    wdn:baseDemand 3.809139e-05 ;
+    wdn:elevation 6.612e+01 .
 
 wdn:Junction_n347 a wdn:Junction ;
     rdfs:label "Junction n347" ;

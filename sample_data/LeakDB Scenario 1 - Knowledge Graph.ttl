@@ -1,11 +1,11 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix wdn: <http://example.org/water-distribution#> .
+@prefix wdn: <https://raw.githubusercontent.com/DiTEC-project/wdn-knowledge-graph/refs/heads/main/wdn_ontology.ttl> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 wdn:Pipe_1 a wdn:Pipe ;
     rdfs:label "Pipe 1" ;
     wdn:diameter 1.060916e+00 ;
-    wdn:hasEndNode wdn:Reservoir_2 ;
+    wdn:hasEndNode wdn:Junction_2 ;
     wdn:hasStartNode wdn:Reservoir_1 ;
     wdn:length 1.142298e+02 ;
     wdn:roughness 1.194946e+02 ;
@@ -313,11 +313,6 @@ wdn:Junction_13 a wdn:Junction ;
     wdn:baseDemand 7.119841e-02 ;
     wdn:elevation 3e+01 .
 
-wdn:Junction_2 a wdn:Junction ;
-    rdfs:label "Junction 2" ;
-    wdn:baseDemand 7.099964e-02 ;
-    wdn:elevation 3e+01 .
-
 wdn:Junction_22 a wdn:Junction ;
     rdfs:label "Junction 22" ;
     wdn:baseDemand 3.738726e-02 ;
@@ -360,6 +355,11 @@ wdn:Junction_18 a wdn:Junction ;
 wdn:Junction_19 a wdn:Junction ;
     rdfs:label "Junction 19" ;
     wdn:baseDemand 4.647416e-03 ;
+    wdn:elevation 3e+01 .
+
+wdn:Junction_2 a wdn:Junction ;
+    rdfs:label "Junction 2" ;
+    wdn:baseDemand 7.099964e-02 ;
     wdn:elevation 3e+01 .
 
 wdn:Junction_21 a wdn:Junction ;
