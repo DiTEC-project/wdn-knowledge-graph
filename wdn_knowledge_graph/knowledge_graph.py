@@ -1,4 +1,5 @@
 import argparse
+import enum
 
 import networkx as nx
 import wntr
@@ -146,19 +147,20 @@ def networkx(rdf_graph):
 
     # Process the RDF graph
     for s, p, o in rdf_graph:
-        s_str, p_str, o_str = str(s), str(p), str(o)
+        s, p = s.toPython(), p.toPython()
+        # Ensure subject is a node
+        if s not in nx_graph:
+            nx_graph.add_node(s)
 
-        # Add subject as a node
-        nx_graph.add_node(s_str)
-
-        # Check if the object is a literal (indicating a data property) or another entity (object property)
-        if isinstance(o, Literal):
-            # Data property → store as node attribute
-            nx_graph.nodes[s_str][p_str] = o_str
-        else:
-            # Object property → ensure object is also a node and create an edge
-            nx_graph.add_node(o_str)
-            nx_graph.add_edge(s_str, o_str, predicate=p_str)
+        # Check if the object is a literal (data property) or an entity (object property)
+        if isinstance(o, Literal):  # Data property → store as a node attribute
+            nx_graph.nodes[s][p] = o.toPython()
+        else:  # Object property → add an edge
+            o = o.toPython()
+            # in case o is not a hashable type, parse it to string
+            if isinstance(o, enum.Enum):
+                o = str(o)
+            nx_graph.add_edge(s, o, predicate=p)
 
     return nx_graph
 
@@ -184,7 +186,7 @@ def main():
     create_knowledge_graph_from_inp(args.inp_file, args.destination)
 
     # ontology = Graph().parse(ontology_file, format="ttl")
-    # networkx_format = networkx(knowledge_graph)
+    # networkx_format = networkx(kg)
 
 
 if __name__ == "__main__":
