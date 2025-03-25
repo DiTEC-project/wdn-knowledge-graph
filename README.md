@@ -90,8 +90,7 @@ ontology_file = 'wdn_ontology.ttl'
 knowledge_graph = create_knowledge_graph_from_inp(inp_file, destination=output_file)
 
 # Convert the RDF knowledge graph to a NetworkX graph for further processing
-ontology = Graph().parse(ontology_file, format='ttl')
-networkx_graph = networkx(knowledge_graph, ontology)
+networkx_graph = networkx(knowledge_graph)
 
 print(networkx_graph)
 
