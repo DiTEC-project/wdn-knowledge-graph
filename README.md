@@ -23,8 +23,8 @@ manipulate the water distribution network data.
     - [Using in a Python Program](#using-in-a-python-program)
 - [About](#about)
 - [Functions](#functions)
-    - [create_knowledge_graph_from_inp](#createknowledgegraphfrominp--inpfile-ontologyfile-destination--outputttl--)
-    - [networkx](#networkx--rdfgraph-)
+    - [Create knowledge grap from .inp](#create-knowledge-grap-from-inp)
+    - [Convert knowledge graph to NetworkX](#convert-knowledge-graph-to-networkx)
 - [Citation](#citation)
 - [Contact](#contact)
 - [Contributing](#contributing)
@@ -150,7 +150,9 @@ and [LeakDB](https://github.com/KIOS-Research/LeakDB) (Scenario 1) datasets.
 
 ## Functions
 
-### create_knowledge_graph_from_inp(inp_file, ontology_file, destination="output.ttl")
+### Create knowledge grap from .inp
+
+**create_knowledge_graph_from_inp(inp_file, ontology_file, destination="output.ttl")**
 
 This function generates a knowledge graph in Turtle format (.ttl) from a water network .inp file and an ontology .ttl
 file. It creates an RDF graph representing the various entities in the water distribution system (e.g., junctions,
@@ -166,7 +168,9 @@ pipes, tanks, etc.).
 
 - An RDF Graph object representing the knowledge graph.
 
-### networkx(rdf_graph)
+### Convert knowledge graph to NetworkX
+
+**networkx(rdf_graph)**
 
 This function converts a Turtle file (knowledge graph) to a NetworkX graph for easier analysis and manipulation.
 It accepts either in RDFlib graph format or a string path to where the .ttl file is located. It processes both object
