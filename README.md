@@ -1,16 +1,16 @@
 # wdn-knowledge-graph
 
-`wdn-knowledge-graph` is a Python package designed to convert water distribution network (WDN) data from `.inp` files (
-the standard format for the [EPANET](https://epanet22.readthedocs.io/en/latest/3_network_model.html) tool) into **RDF
+`wdn-knowledge-graph` is a Python package designed to convert water distribution network (WDN) data from `.inp` files
+(the standard format for the [EPANET](https://epanet22.readthedocs.io/en/latest/3_network_model.html) tool) into **RDF
 knowledge graphs** in the `.ttl` format using a WDN ontology we created.
 
 The **WDN ontology**
 in [`wdn_ontology.ttl`](https://github.com/DiTEC-project/wdn-knowledge-graph/blob/main/wdn_ontology.ttl) captures the
-physical components
-of a WDN, inspired from the EPANET tool.
+physical components of a WDN, inspired from the EPANET tool.
 
-This package also provides the possibility of converting the final knowledge graph to the popular NetworkX format for
-further processing, making it easier to analyze and manipulate the water distribution network data.
+This package also provides the possibility of converting the final knowledge graph to the
+popular [NetworkX](https://networkx.org/) format for further processing, making it easier to analyze and
+manipulate the water distribution network data.
 
 ---
 
@@ -19,16 +19,12 @@ further processing, making it easier to analyze and manipulate the water distrib
 - [Introduction](#introduction)
 - [Installation](#installation)
 - [Usage](#usage)
-    - [Command-Line Interface (CLI)](#command-line-interface-cli)
+    - [Command-Line Interface (CLI)](#command-line-interface--cli-)
     - [Using in a Python Program](#using-in-a-python-program)
 - [About](#about)
-    - [EPANET](#epanet)
-    - [TTL Files](#ttl-files)
-    - [INP Files](#inp-files)
-    - [Ontology and Knowledge Graph](#ontology-and-knowledge-graph)
 - [Functions](#functions)
-    - [create_knowledge_graph_from_inp](#create_knowledge_graph_from_inp)
-    - [networkx](#networkx)
+    - [create_knowledge_graph_from_inp](#createknowledgegraphfrominp--inpfile-ontologyfile-destination--outputttl--)
+    - [networkx](#networkx--rdfgraph-)
 - [Citation](#citation)
 - [Contact](#contact)
 - [Contributing](#contributing)

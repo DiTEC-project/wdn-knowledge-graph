@@ -20,7 +20,7 @@ setup(
     author="Erkan Karabulut",
     author_email="e.karabulut@uva.nl",
     description="A package for creating knowledge graphs from water distribution network data.",
-    long_description=open('README.md').read(),
+    long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/DiTEC-project/wdn-knowledge-graph",
     classifiers=[
