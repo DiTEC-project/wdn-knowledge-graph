@@ -160,7 +160,10 @@ def networkx(rdf_graph):
             # in case o is not a hashable type, parse it to string
             if isinstance(o, enum.Enum):
                 o = str(o)
-            nx_graph.add_edge(s, o, predicate=p)
+            if p == RDF.type.toPython():
+                nx_graph.nodes[s][RDF.type.toPython()] = o
+            else:
+                nx_graph.add_edge(s, o, predicate=p)
 
     return nx_graph
 
